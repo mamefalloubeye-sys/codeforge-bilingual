@@ -39,7 +39,7 @@ export default function LanguageSection() {
     return (
       <div className="flex flex-col items-center justify-center h-full">
         <p className="text-muted-foreground mb-4">
-          {appLang === 'fr' ? 'Langage non trouvé' : 'Language not found'}
+          {t('language.notFound')}
         </p>
         <Button onClick={() => navigate('/')}>
           {t('common.back')}
@@ -49,7 +49,7 @@ export default function LanguageSection() {
   }
 
   const difficulties: { value: Difficulty | 'all'; label: string; color: string }[] = [
-    { value: 'all', label: appLang === 'fr' ? 'Tous' : 'All', color: 'bg-muted text-foreground' },
+    { value: 'all', label: t('exercises.all'), color: 'bg-muted text-foreground' },
     { value: 'easy', label: t('exercise.easy'), color: 'bg-green-500/20 text-green-400' },
     { value: 'medium', label: t('exercise.medium'), color: 'bg-yellow-500/20 text-yellow-400' },
     { value: 'hard', label: t('exercise.hard'), color: 'bg-red-500/20 text-red-400' },
@@ -116,9 +116,7 @@ export default function LanguageSection() {
           >
             {filteredExercises.length === 0 ? (
               <div className="text-center py-12 text-muted-foreground">
-                {appLang === 'fr' 
-                  ? 'Aucun exercice disponible pour ce filtre.'
-                  : 'No exercises available for this filter.'}
+                {t('exercises.noResults')}
               </div>
             ) : (
               filteredExercises.map((exercise, idx) => {
@@ -187,9 +185,7 @@ export default function LanguageSection() {
               <Book className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground">{t('nav.tutorials')}</h3>
               <p className="text-sm text-muted-foreground mt-1">
-                {appLang === 'fr' 
-                  ? 'Apprenez les concepts de base'
-                  : 'Learn the basic concepts'}
+                {t('language.tutorials')}
               </p>
             </button>
             
@@ -204,9 +200,7 @@ export default function LanguageSection() {
               <Code2 className="w-8 h-8 text-accent mb-3" />
               <h3 className="font-semibold text-foreground">{t('nav.exercises')}</h3>
               <p className="text-sm text-muted-foreground mt-1">
-                {appLang === 'fr'
-                  ? 'Pratiquez avec des exercices guidés'
-                  : 'Practice with guided exercises'}
+                {t('language.exercises')}
               </p>
             </button>
             
@@ -217,9 +211,7 @@ export default function LanguageSection() {
               <Trophy className="w-8 h-8 text-yellow-400 mb-3" />
               <h3 className="font-semibold text-foreground">{t('nav.challenges')}</h3>
               <p className="text-sm text-muted-foreground mt-1">
-                {appLang === 'fr'
-                  ? 'Relevez des défis avancés'
-                  : 'Take on advanced challenges'}
+                {t('language.challenges')}
               </p>
             </button>
           </motion.div>

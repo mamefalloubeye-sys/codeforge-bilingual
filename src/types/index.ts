@@ -30,8 +30,8 @@ export interface Exercise {
 }
 
 export interface UserProgress {
-  oderId: string;
-  oderlanguage: ProgrammingLanguage;
+  userId: string;
+  userLanguage: ProgrammingLanguage;
   completedExercises: string[];
   exerciseHistory: ExerciseAttempt[];
   streak: number;

@@ -20,9 +20,7 @@ export default function Exercises() {
       >
         <h1 className="text-3xl font-bold text-foreground mb-2">{t('nav.exercises')}</h1>
         <p className="text-muted-foreground">
-          {language === 'fr' 
-            ? 'Choisissez un langage pour accéder aux exercices'
-            : 'Choose a language to access exercises'}
+          {t('exercises.chooseLanguage')}
         </p>
       </motion.div>
 
@@ -51,7 +49,7 @@ export default function Exercises() {
                     {lang.name}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {total} {language === 'fr' ? 'exercices' : 'exercises'}
+                    {total} {t('exercises.count')}
                   </p>
                 </div>
               </div>
@@ -63,7 +61,7 @@ export default function Exercises() {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">
-                    {language === 'fr' ? 'Progression' : 'Progress'}
+                    {t('exercises.progression')}
                   </span>
                   <span className="font-semibold text-foreground">{percentage}%</span>
                 </div>
@@ -76,13 +74,13 @@ export default function Exercises() {
                   />
                 </div>
                 <p className="text-xs text-muted-foreground text-right">
-                  {completed}/{total} {language === 'fr' ? 'complétés' : 'completed'}
+                  {completed}/{total} {t('exercises.completed')}
                 </p>
               </div>
 
               <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
                 <span className="text-sm font-medium text-primary group-hover:underline">
-                  {language === 'fr' ? 'Commencer →' : 'Start →'}
+                  {t('exercises.start')}
                 </span>
                 <Code2 className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>

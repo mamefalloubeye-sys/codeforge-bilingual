@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
 
 export default function Tutorials() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const navigate = useNavigate();
 
   const tutorials = [
@@ -50,12 +50,10 @@ export default function Tutorials() {
       >
         <h1 className="text-3xl font-bold text-foreground mb-2 flex items-center gap-3">
           <Book className="w-8 h-8 text-primary" />
-          {language === 'fr' ? 'Tutoriels' : 'Tutorials'}
+          {t('tutorials.title')}
         </h1>
         <p className="text-muted-foreground">
-          {language === 'fr'
-            ? 'Apprenez les concepts de base avec nos tutoriels interactifs'
-            : 'Learn the basics with our interactive tutorials'}
+          {t('tutorials.subtitle')}
         </p>
       </motion.div>
 
@@ -79,7 +77,7 @@ export default function Tutorials() {
                   <div>
                     <h2 className="text-xl font-bold text-foreground">{tutorial.title[language]}</h2>
                     <p className="text-sm text-muted-foreground">
-                      {tutorial.lessons.length} {language === 'fr' ? 'leçons' : 'lessons'}
+                      {tutorial.lessons.length} {t('tutorials.lessons')}
                     </p>
                   </div>
                 </div>

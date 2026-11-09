@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export default function Challenges() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
 
   const dailyChallenge = {
     title: language === 'fr' ? 'Défi du jour: Fibonacci' : 'Daily Challenge: Fibonacci',
@@ -62,12 +62,10 @@ export default function Challenges() {
       >
         <h1 className="text-3xl font-bold text-foreground mb-2 flex items-center gap-3">
           <Trophy className="w-8 h-8 text-yellow-400" />
-          {language === 'fr' ? 'Défis' : 'Challenges'}
+          {t('nav.challenges')}
         </h1>
         <p className="text-muted-foreground">
-          {language === 'fr'
-            ? 'Relevez des défis quotidiens et gagnez des points bonus!'
-            : 'Take on daily challenges and earn bonus points!'}
+          {t('challenges.subtitle')}
         </p>
       </motion.div>
 
@@ -92,7 +90,7 @@ export default function Challenges() {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <span className="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-semibold">
-                {language === 'fr' ? 'DÉFI DU JOUR' : 'DAILY CHALLENGE'}
+                {t('challenges.daily')}
               </span>
               <span className="flex items-center gap-1 text-sm font-semibold text-yellow-400">
                 <Star className="w-4 h-4" />
@@ -111,20 +109,20 @@ export default function Challenges() {
                 dailyChallenge.difficulty === 'medium' && "bg-yellow-500/20 text-yellow-400",
                 dailyChallenge.difficulty === 'hard' && "bg-red-500/20 text-red-400"
               )}>
-                {dailyChallenge.difficulty}
+                {t(`exercise.${dailyChallenge.difficulty}`)}
               </span>
             </div>
           </div>
         </div>
         <Button className="mt-6 w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:opacity-90">
-          {language === 'fr' ? 'Relever le défi' : 'Take the Challenge'}
+          {t('challenges.take')}
         </Button>
       </motion.div>
 
       {/* Challenge List */}
       <div className="space-y-4">
         <h2 className="text-xl font-bold text-foreground">
-          {language === 'fr' ? 'Autres défis' : 'Other Challenges'}
+          {t('challenges.others')}
         </h2>
         
         {challenges.map((challenge, idx) => (

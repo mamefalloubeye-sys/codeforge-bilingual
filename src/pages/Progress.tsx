@@ -38,9 +38,7 @@ export default function Progress() {
           {t('nav.progress')}
         </h1>
         <p className="text-muted-foreground">
-          {language === 'fr' 
-            ? 'Suivez votre progression et vos accomplissements'
-            : 'Track your progress and achievements'}
+          {t('progress.subtitle')}
         </p>
       </motion.div>
 
@@ -81,7 +79,7 @@ export default function Progress() {
         className="bg-card rounded-xl border border-border p-6"
       >
         <h2 className="text-lg font-semibold text-foreground mb-4">
-          {language === 'fr' ? 'Progression globale' : 'Overall Progress'}
+          {t('progress.overall')}
         </h2>
         <div className="h-4 bg-muted rounded-full overflow-hidden mb-2">
           <motion.div
@@ -92,7 +90,7 @@ export default function Progress() {
           />
         </div>
         <p className="text-sm text-muted-foreground text-right">
-          {completedTotal}/{totalExercises} {language === 'fr' ? 'exercices complétés' : 'exercises completed'}
+          {completedTotal}/{totalExercises} {t('progress.completedExercises')}
         </p>
       </motion.div>
 
@@ -152,9 +150,7 @@ export default function Progress() {
         
         {recentActivity.length === 0 ? (
           <p className="text-muted-foreground text-center py-8">
-            {language === 'fr' 
-              ? 'Aucune activité récente. Commencez un exercice!'
-              : 'No recent activity. Start an exercise!'}
+            {t('progress.noActivity')}
           </p>
         ) : (
           <div className="space-y-3">
@@ -174,8 +170,8 @@ export default function Progress() {
                     <p className="font-medium text-foreground">{attempt.exerciseId}</p>
                     <p className="text-xs text-muted-foreground">
                       {attempt.passed 
-                        ? (language === 'fr' ? 'Réussi' : 'Passed')
-                        : (language === 'fr' ? 'Échoué' : 'Failed')}
+                        ? t('progress.passed')
+                        : t('progress.failed')}
                     </p>
                   </div>
                 </div>

@@ -37,6 +37,39 @@ const translations: Record<Language, Record<string, string>> = {
     'dashboard.totalPoints': 'Points totaux',
     'dashboard.recentActivity': 'Activité récente',
     'dashboard.selectLanguage': 'Sélectionnez un langage',
+    'dashboard.welcomeTag': 'Bienvenue',
+    
+    // Exercises
+    'exercises.chooseLanguage': 'Choisissez un langage pour accéder aux exercices',
+    'exercises.count': 'exercices',
+    'exercises.start': 'Commencer →',
+    'exercises.progression': 'Progression',
+    'exercises.completed': 'complétés',
+    
+    // Language
+    'language.notFound': 'Langage non trouvé',
+    
+    // Tutorials
+    'tutorials.title': 'Tutoriels',
+    'tutorials.subtitle': 'Apprenez les concepts de base avec nos tutoriels interactifs',
+    'tutorials.lessons': 'leçons',
+    
+    // Challenges
+    'challenges.subtitle': 'Relevez des défis quotidiens et gagnez des points bonus!',
+    'challenges.daily': 'Défi du jour',
+    'challenges.dailyDescription': 'Implémentez une fonction qui calcule le n-ième nombre de Fibonacci.',
+    'challenges.take': 'Relever le défi',
+    'challenges.others': 'Autres défis',
+    
+    // Progress
+    'progress.overall': 'Progression globale',
+    'progress.noActivity': 'Aucune activité récente. Commencez un exercice !',
+    
+    // Settings
+    'settings.theme.dark': 'Sombre',
+    'settings.theme.light': 'Clair',
+    'settings.theme.highContrast': 'Contraste élevé',
+    
     
     // Exercises
     'exercise.title': 'Titre de l\'exercice',
@@ -92,6 +125,29 @@ const translations: Record<Language, Record<string, string>> = {
     'common.days': 'jours',
     'common.hours': 'heures',
     'common.minutes': 'minutes',
+    'common.menu': 'Menu',
+    'exercises.all': 'Tous',
+    'language.tutorials': 'Apprenez les concepts de base',
+    'language.exercises': 'Pratiquez avec des exercices guidés',
+    'language.challenges': 'Relevez des défis avancés',
+    'notFound.title': 'Oops ! Page introuvable',
+    'exercise.completed': 'Complété',
+    'exercise.moreHints': 'Plus d\'indices',
+    'exercise.runHint': 'Exécutez votre code pour voir le résultat...',
+    'exercises.noResults': 'Aucun exercice disponible pour ce filtre.',
+    'progress.subtitle': 'Suivez votre progression et vos accomplissements',
+    'progress.completedExercises': 'exercices complétés',
+    'progress.passed': 'Réussi',
+    'progress.failed': 'Échoué',
+    'settings.exported': 'Données exportées!',
+    'settings.resetConfirm': 'Êtes-vous sûr de vouloir réinitialiser votre progression ? Cette action est irréversible.',
+    'settings.resetDone': 'Progression réinitialisée',
+    'settings.subtitle': 'Personnalisez votre expérience CodeTrainer',
+    'settings.interfaceLanguage': 'Langue de l\'interface',
+    'settings.interfaceLanguageDesc': 'Choisissez la langue de l\'application',
+    'settings.editorThemeLabel': 'Thème de l\'éditeur de code',
+    'settings.fontSize': 'Taille de la police',
+    'settings.dataManagement': 'Gestion des données',
   },
   en: {
     // Navigation
@@ -121,6 +177,39 @@ const translations: Record<Language, Record<string, string>> = {
     'dashboard.totalPoints': 'Total Points',
     'dashboard.recentActivity': 'Recent Activity',
     'dashboard.selectLanguage': 'Select a language',
+    'dashboard.welcomeTag': 'Welcome',
+    
+    // Exercises
+    'exercises.chooseLanguage': 'Choose a language to access exercises',
+    'exercises.count': 'exercises',
+    'exercises.start': 'Start →',
+    'exercises.progression': 'Progress',
+    'exercises.completed': 'completed',
+    
+    // Language
+    'language.notFound': 'Language not found',
+    
+    // Tutorials
+    'tutorials.title': 'Tutorials',
+    'tutorials.subtitle': 'Learn the basics with our interactive tutorials',
+    'tutorials.lessons': 'lessons',
+    
+    // Challenges
+    'challenges.subtitle': 'Take on daily challenges and earn bonus points!',
+    'challenges.daily': 'Daily Challenge',
+    'challenges.dailyDescription': 'Implement a function that calculates the n-th Fibonacci number.',
+    'challenges.take': 'Take the Challenge',
+    'challenges.others': 'Other Challenges',
+    
+    // Progress
+    'progress.overall': 'Overall Progress',
+    'progress.noActivity': 'No recent activity. Start an exercise!',
+    
+    // Settings
+    'settings.theme.dark': 'Dark',
+    'settings.theme.light': 'Light',
+    'settings.theme.highContrast': 'High Contrast',
+    
     
     // Exercises
     'exercise.title': 'Exercise Title',
@@ -176,6 +265,28 @@ const translations: Record<Language, Record<string, string>> = {
     'common.days': 'days',
     'common.hours': 'hours',
     'common.minutes': 'minutes',
+    'common.menu': 'Menu',
+    'exercises.all': 'All',
+    'language.tutorials': 'Learn the basic concepts',
+    'language.exercises': 'Practice with guided exercises',
+    'language.challenges': 'Take on advanced challenges',
+    'notFound.title': 'Oops! Page not found',
+    'exercise.completed': 'Completed',
+    'exercise.moreHints': 'More hints',
+    'exercise.runHint': 'Run your code to see the output...',
+    'exercises.noResults': 'No exercises available for this filter.',
+    'progress.subtitle': 'Track your progress and achievements',
+    'progress.completedExercises': 'exercises completed',
+    'progress.passed': 'Passed',
+    'progress.failed': 'Failed',
+    'settings.exported': 'Data exported!',
+    'settings.resetDone': 'Progress reset',
+    'settings.subtitle': 'Customize your CodeTrainer experience',
+    'settings.interfaceLanguage': 'Interface Language',
+    'settings.interfaceLanguageDesc': 'Choose the application language',
+    'settings.editorThemeLabel': 'Code editor theme',
+    'settings.fontSize': 'Font size',
+    'settings.dataManagement': 'Data Management',
   },
 };
 

@@ -4,8 +4,8 @@ import { UserProgress, ExerciseAttempt, ProgrammingLanguage } from '@/types';
 const STORAGE_KEY = 'codetrainer-progress';
 
 const defaultProgress: UserProgress = {
-oderId: '',
-  oderlanguage: 'python',
+  userId: '',
+  userLanguage: 'python',
   completedExercises: [],
   exerciseHistory: [],
   streak: 0,
@@ -31,6 +31,18 @@ export function useProgress() {
   const saveProgress = useCallback((newProgress: UserProgress) => {
     setProgress(newProgress);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newProgress));
+  }, []);
+
+  const computeBadges = useCallback((
+    completedExercises: string[],
+    streak: number,
+    totalPoints: number
+  ): string[] => {
+    const badges: string[] = [];
+    if (completedExercises.length > 0) badges.push('first-steps');
+    if (streak >= 3) badges.push('streak-3');
+    if (totalPoints >= 50) badges.push('points-50');
+    return badges;
   }, []);
 
   const markExerciseComplete = useCallback((
@@ -67,10 +79,17 @@ export function useProgress() {
       streak: newStreak,
       lastActivityDate: new Date().toISOString(),
       totalPoints: passed ? progress.totalPoints + 10 : progress.totalPoints,
+      badges: computeBadges(
+        passed && !progress.completedExercises.includes(exerciseId)
+          ? [...progress.completedExercises, exerciseId]
+          : progress.completedExercises,
+        newStreak,
+        passed ? progress.totalPoints + 10 : progress.totalPoints
+      ),
     };
 
     saveProgress(newProgress);
-  }, [progress, saveProgress]);
+  }, [progress, saveProgress, computeBadges]);
 
   const getCompletedByLanguage = useCallback((language: ProgrammingLanguage): number => {
     return progress.completedExercises.filter(id => id.startsWith(language)).length;

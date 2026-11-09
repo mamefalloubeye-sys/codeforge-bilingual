@@ -67,7 +67,7 @@ export function AppSidebar() {
           "text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3",
           collapsed && "text-center"
         )}>
-          {!collapsed && 'Menu'}
+          {!collapsed && t('common.menu')}
         </p>
         
         {mainNavItems.map((item) => (

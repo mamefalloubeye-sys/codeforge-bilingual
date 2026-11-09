@@ -103,7 +103,7 @@ export function CodeEditor({ exercise, onNext, onPrevious, hasNext, hasPrevious 
             {completed && (
               <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-semibold">
                 <Check className="w-3 h-3" />
-                {appLang === 'fr' ? 'Complété' : 'Completed'}
+                {t('exercise.completed')}
               </div>
             )}
           </div>
@@ -162,7 +162,7 @@ export function CodeEditor({ exercise, onNext, onPrevious, hasNext, hasPrevious 
                   size="sm"
                   onClick={() => setHintIndex(hintIndex + 1)}
                 >
-                  {appLang === 'fr' ? 'Plus d\'indices' : 'More hints'}
+                  {t('exercise.moreHints')}
                 </Button>
               )}
             </motion.div>
@@ -290,7 +290,7 @@ export function CodeEditor({ exercise, onNext, onPrevious, hasNext, hasPrevious 
             "p-4 font-mono text-sm min-h-[120px] whitespace-pre-wrap",
             passed ? "text-green-400" : output.includes('❌') ? "text-red-400" : "text-muted-foreground"
           )}>
-            {output || (appLang === 'fr' ? 'Exécutez votre code pour voir le résultat...' : 'Run your code to see the output...')}
+            {output || t('exercise.runHint')}
           </div>
         </motion.div>
       </div>

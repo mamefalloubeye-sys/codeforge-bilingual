@@ -45,15 +45,13 @@ export default function Settings() {
     a.click();
     URL.revokeObjectURL(url);
     
-    toast.success(language === 'fr' ? 'Données exportées!' : 'Data exported!');
+    toast.success(t('settings.exported'));
   };
 
   const handleResetProgress = () => {
-    if (confirm(language === 'fr' 
-      ? 'Êtes-vous sûr de vouloir réinitialiser votre progression? Cette action est irréversible.'
-      : 'Are you sure you want to reset your progress? This action cannot be undone.')) {
+    if (confirm(t('settings.resetConfirm'))) {
       resetProgress();
-      toast.success(language === 'fr' ? 'Progression réinitialisée' : 'Progress reset');
+      toast.success(t('settings.resetDone'));
     }
   };
 
@@ -68,9 +66,7 @@ export default function Settings() {
           {t('nav.settings')}
         </h1>
         <p className="text-muted-foreground">
-          {language === 'fr'
-            ? 'Personnalisez votre expérience CodeTrainer'
-            : 'Customize your CodeTrainer experience'}
+          {t('settings.subtitle')}
         </p>
       </motion.div>
 
@@ -89,11 +85,9 @@ export default function Settings() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <Label>{language === 'fr' ? 'Langue de l\'interface' : 'Interface Language'}</Label>
+              <Label>{t('settings.interfaceLanguage')}</Label>
               <p className="text-sm text-muted-foreground">
-                {language === 'fr' 
-                  ? 'Choisissez la langue de l\'application'
-                  : 'Choose the application language'}
+                {t('settings.interfaceLanguageDesc')}
               </p>
             </div>
             <Select value={language} onValueChange={(v) => setLanguage(v as 'fr' | 'en')}>
@@ -126,7 +120,7 @@ export default function Settings() {
             <div>
               <Label>{t('editor.theme')}</Label>
               <p className="text-sm text-muted-foreground">
-                {language === 'fr' ? 'Thème de l\'éditeur de code' : 'Code editor theme'}
+                {t('settings.editorThemeLabel')}
               </p>
             </div>
             <Select value={editorTheme} onValueChange={setEditorTheme}>
@@ -134,9 +128,9 @@ export default function Settings() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-popover border-border">
-                <SelectItem value="vs-dark">Dark</SelectItem>
-                <SelectItem value="light">Light</SelectItem>
-                <SelectItem value="hc-black">High Contrast</SelectItem>
+                <SelectItem value="vs-dark">{t('settings.theme.dark')}</SelectItem>
+                <SelectItem value="light">{t('settings.theme.light')}</SelectItem>
+                <SelectItem value="hc-black">{t('settings.theme.highContrast')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -145,7 +139,7 @@ export default function Settings() {
             <div>
               <Label>{t('editor.fontSize')}</Label>
               <p className="text-sm text-muted-foreground">
-                {language === 'fr' ? 'Taille de la police' : 'Font size'}
+                {t('settings.fontSize')}
               </p>
             </div>
             <Select value={fontSize} onValueChange={setFontSize}>
@@ -181,9 +175,7 @@ export default function Settings() {
             <div>
               <Label>{t('settings.dailyReminder')}</Label>
               <p className="text-sm text-muted-foreground">
-                {language === 'fr' 
-                  ? 'Rappel pour les défis quotidiens'
-                  : 'Reminder for daily challenges'}
+                {t('settings.dailyReminder')}
               </p>
             </div>
             <Switch checked={dailyReminder} onCheckedChange={setDailyReminder} />
@@ -193,9 +185,7 @@ export default function Settings() {
             <div>
               <Label>{t('settings.soundEffects')}</Label>
               <p className="text-sm text-muted-foreground">
-                {language === 'fr'
-                  ? 'Sons lors des réussites et erreurs'
-                  : 'Sounds for successes and errors'}
+                {t('settings.soundEffects')}
               </p>
             </div>
             <Switch checked={soundEffects} onCheckedChange={setSoundEffects} />
@@ -211,7 +201,7 @@ export default function Settings() {
         className="bg-card rounded-xl border border-border p-6"
       >
         <h2 className="text-lg font-semibold text-foreground mb-6">
-          {language === 'fr' ? 'Gestion des données' : 'Data Management'}
+          {t('settings.dataManagement')}
         </h2>
         
         <div className="space-y-4">
